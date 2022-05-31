@@ -1,38 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .App {
-  text-align: center;
+  width: 80%;
+  min-height: 60vh;
+  margin: 50px auto;
+  background: rgba(248, 247, 247, 0.891);
+  border-radius: 15px;
+  box-shadow: rgb(112, 188, 7) 5px 5px 30px 7px;
+  animation: shadow_fone 8s linear infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app_wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav c'
+  ;
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app_wrapper_content {
+  grid-area: c;
+  /* min-height: 60%; */
+  height: 80vh;
+  overflow-y: scroll;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading_img {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  margin: 150px auto;
 }

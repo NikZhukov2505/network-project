@@ -1,0 +1,18 @@
+.photo {
+    width: 100%;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.description_block {
+    padding: 10px;
+}
+
+.user_photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
