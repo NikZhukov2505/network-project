@@ -15,7 +15,7 @@ const Users = (p) => {
             <div className={styles.btns__wrapper}>
                 {
                     pages.map((el, i) => (
-                        <button key={i + 1} onClick={() => p.onPageChanged(el)} className={p.currentPage === el && styles.selectedPage}>{el}</button>
+                        <button key={i + 1} onClick={() => p.onPageChanged(el)} className={p.currentPage === el ? styles.selectedPage : undefined}>{el}</button>
                     ))
                 }
             </div>
@@ -30,8 +30,11 @@ const Users = (p) => {
                             <div className={styles.btns}>
                                 {
                                     u.followed ?
-                                        <button onClick={() => p.unfollow(u.id)}>Unfollow</button>
-                                        : <button onClick={() => p.follow(u.id)}>Follow</button>
+                                        <button disabled={p.followingInProgress.some(id => id === u.id)}
+                                            onClick={() => { p.unfollow(u.id) }}>Unfollow</button>
+                                        :
+                                        <button disabled={p.followingInProgress.some(id => id === u.id)}
+                                            onClick={() => { p.follow(u.id) }}>Follow</button>
                                 }
                             </div>
                         </span>

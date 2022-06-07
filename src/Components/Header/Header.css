@@ -4,7 +4,14 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.logo_block {
+    display: flex;
+    align-items: center;
+
 }
 
 .logo {
@@ -31,4 +38,23 @@
     100% {
         filter: hue-rotate(360deg);
     }
+}
+
+.login_block {
+    /* float: right; */
+    margin-right: 40px;
+    font-size: 25px;
+}
+
+.login_block a {
+    text-decoration: none;
+    font-family: 'Permanent';
+    font-weight: 700;
+    color: black;
+    text-shadow: red 1px 1px 3px;
+    font-style: italic;
+}
+
+.login_link.active {
+    color: red;
 }
