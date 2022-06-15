@@ -4,6 +4,7 @@ import dialogsReducer from './dialogsReducer';
 import usersReducer from "./usersReducer";
 import authReducer from "./auth-reducer";
 import thunk from "redux-thunk";
+import formikReducer from "./formik-reducer";
 // import sidebarReducer from './sidebarReducer';
 
 const reducers = combineReducers({
@@ -12,6 +13,7 @@ const reducers = combineReducers({
     // sidebarReducer,
     usersPage: usersReducer,
     auth: authReducer,
+    form: formikReducer,
 })
 
 const store = createStore(reducers, applyMiddleware(thunk));

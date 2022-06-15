@@ -12,7 +12,7 @@ const Profile = (props) => {
     return (
         <div data-aos-duration='1400' data-aos="fade-up">
             <div>
-                <ProfileInfo profile={props.profile} />
+                <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
                 <MyPostsContainer />
             </div>
         </div>

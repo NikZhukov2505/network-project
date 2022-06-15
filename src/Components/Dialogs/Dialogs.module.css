@@ -94,7 +94,6 @@
 
 .addtext {
     width: 80%;
-    /* min-height: 30px; */
     margin-left: 10px;
     border-radius: 10px;
     color: white;
@@ -102,4 +101,16 @@
     border: transparent;
     box-shadow: white 0px 0px 5px 5px;
     padding: 10px;
+}
+
+.redForm {
+    border: 3px solid red;
+}
+
+.errorInfo {
+    position: absolute;
+    top: 15%;
+    right: 25%;
+    font-size: 20px;
+    color: red;
 }
