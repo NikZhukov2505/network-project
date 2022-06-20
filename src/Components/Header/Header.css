@@ -58,3 +58,23 @@
 .login_link.active {
     color: red;
 }
+
+.logout_block {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.logout_btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    background-color: black;
+    color: chocolate;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}

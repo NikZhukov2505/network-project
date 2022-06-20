@@ -12,7 +12,13 @@ const Header = (p) => {
             </div>
 
             <div className='login_block'>
-                {p.isAuth ? p.login : <NavLink className='login_link' to={'/login'}>Login</NavLink>}
+                {p.isAuth
+                    ?
+                    <div className='logout_block'>{p.login}<button onClick={() => {
+                        p.logout()
+                    }} className='logout_btn'>Logout</button></div>
+                    :
+                    <NavLink className='login_link' to={'/login'}>Login</NavLink>}
             </div>
         </header>
     );
