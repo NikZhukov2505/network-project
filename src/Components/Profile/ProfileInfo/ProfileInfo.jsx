@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ProfileInfo.module.css'
 import avatar from '../../../images/avatarjpg.jpg'
 import Preloader from '../../common/Preloader/Preloader';
-import ProfileStatus from '../../ProfileStatus/ProfileStatus';
+import ProfileStatusWithHooks from '../../ProfileStatus/ProfileStatusWiithHooks';
 
 const ProfileInfo = (p) => {
     if (!p.profile) {
@@ -16,7 +16,7 @@ const ProfileInfo = (p) => {
             <div className={styles.description_block}>
                 <img className={styles.user_photo} src={p.profile.photos.large !== null ? p.profile.photos.large : avatar} alt="profile.photos.large" />
                 <h1>{p.profile.fullName}</h1>
-                <ProfileStatus status={p.status} updateStatus={p.updateStatus} />
+                <ProfileStatusWithHooks status={p.status} updateStatus={p.updateStatus} />
                 <p>Поиск работы: {p.profile.lookingForAJob != false ? 'В поиске' : 'Пока не в поиске'}</p>
                 <p>About me: {p.profile.aboutMe != null ? p.profile.aboutMe : 'Пользователь еще ничего о себе не рассказал'}</p>
             </div>
