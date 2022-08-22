@@ -5,9 +5,7 @@ import styles from './ProfileStatus.module.css'
 const ProfileStatusWithHooks = (props) => {
     const [editMode, setEditMode] = useState(false)
     const [status, setStatus] = useState(props.status)
-    useEffect(() => {
-        setStatus(props.status)
-    }, [props.status])
+
 
     const activateEditMode = () => {
         setEditMode(true)
@@ -19,6 +17,9 @@ const ProfileStatusWithHooks = (props) => {
     const onStatusChange = (e) => {
         setStatus(e.target.value)
     }
+    useEffect(() => {
+        setStatus(props.status)
+    }, [props.status])
 
     return (
         <div className={styles.status_block}>
@@ -37,7 +38,7 @@ const ProfileStatusWithHooks = (props) => {
                     <div>
                         <span
                             title='Double click to change status'
-                            onDoubleClick={activateEditMode}>{props.status || '----'}</span>
+                            onDoubleClick={activateEditMode}>{props.status || 'Status empty'}</span>
                     </div>
             }
         </div>

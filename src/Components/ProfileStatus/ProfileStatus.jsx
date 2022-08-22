@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import styles from './ProfileStatus.module.css'
 
 class ProfileStatus extends Component {
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.status != this.props.status) {
+            this.setState({ status: this.props.status })
+        }
+    }
+
     state = {
         editMode: false,
         status: this.props.status,
@@ -24,11 +30,7 @@ class ProfileStatus extends Component {
         this.props.updateStatus(this.state.status)
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.status !== this.props.status) {
-            this.setState({ status: this.props.status })
-        }
-    }
+
 
     render() {
         return (

@@ -4,21 +4,18 @@ import avatar from '../../../images/avatarjpg.jpg'
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatusWithHooks from '../../ProfileStatus/ProfileStatusWiithHooks';
 
-const ProfileInfo = (p) => {
-    if (!p.profile) {
+const ProfileInfo = ({ profile, status, updateStatus }) => {
+    if (!profile) {
         return <Preloader />
     }
     return (
         <div>
-            {/* <div className={styles.photo}>
-                <img src={tesla} alt="" />
-            </div> */}
             <div className={styles.description_block}>
-                <img className={styles.user_photo} src={p.profile.photos.large !== null ? p.profile.photos.large : avatar} alt="profile.photos.large" />
-                <h1>{p.profile.fullName}</h1>
-                <ProfileStatusWithHooks status={p.status} updateStatus={p.updateStatus} />
-                <p>Поиск работы: {p.profile.lookingForAJob != false ? 'В поиске' : 'Пока не в поиске'}</p>
-                <p>About me: {p.profile.aboutMe != null ? p.profile.aboutMe : 'Пользователь еще ничего о себе не рассказал'}</p>
+                <img className={styles.user_photo} src={profile.photos.large !== null ? profile.photos.large : avatar} alt="profile.photos.large" />
+                <h1>{profile.fullName}</h1>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+                <p>Поиск работы: {profile.lookingForAJob != false ? 'В поиске' : 'Пока не в поиске'}</p>
+                <p>About me: {profile.aboutMe != null ? profile.aboutMe : 'Пользователь еще ничего о себе не рассказал'}</p>
             </div>
         </div>
     );
